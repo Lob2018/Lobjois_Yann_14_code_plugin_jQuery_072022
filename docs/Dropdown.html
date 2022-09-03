@@ -1,0 +1,2076 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Dropdown</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+</head>
+
+
+
+<body class="layout small-header">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+            
+             
+                <a href="index.html">
+                    <h1 class="navbar-item">React Dropdown Component Library</h1>
+                </a>
+            
+        </div>
+        <div class="menu">
+            
+            <div class="navigation">
+                <a
+                    href="index.html"
+                    class="link"
+                >
+                    Documentation
+                </a>
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+            <nav>
+                
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Components</h3><ul><li><a href="Dropdown.html">Dropdown</a></li></ul></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Components</p>
+                    <h1>Dropdown</h1>
+                </header>
+                
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+            &ltDropdown  /&gt
+        </h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class='vertical-section'>
+                <div class="members">
+                    <div class="member">
+                        <div class=name>
+                            <span class="tag">Constructor</span>
+                        </div>
+                        
+
+
+    
+    <h4 class="name" id="Dropdown">
+        <a class="href-link" href="#Dropdown">#</a>
+        
+        <span class="code-name">
+            
+                &ltDropdown  /&gt
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Dropdown component</p>
+    </div>
+    
+
+
+
+
+
+
+
+    
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>props</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type">Props</code>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><pre><b>The props are the dropdown label's unique id, an optional default value, a message when data is empty, and data.</b>
+
+Corresponding to the Props interface {
+  labelId: string;
+  defaultValue?: Combo; // Optional to select the default value of the dropdown
+  data: Combo[];
+}
+The Combo interface {
+  value: string; // The value shown in the dropdown
+  overrideValue?: string; // Optional to change the title tag's value.
+}
+
+<b>Example :
+    &lt;Dropdown
+      labelId="service-label"
+      defaultValue={{ value: "Marketing" }}
+      data={[
+        { value: "Sales" },
+        { value: "Marketing" },
+        { value: "Engineering" },
+        { value: "Human Resources" },
+        { value: "Legal" },
+      ]}
+      messageIfNoData="Pas de données trouvées"
+    />
+</b></pre></td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="index.tsx.html" class="button">View Source</a>
+            <span>
+                <a href="index.tsx.html">index.tsx</a>, <a href="index.tsx.html#line35">line 35</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>The corresponding Dropdown</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<code class="param-type">React.ReactElement</code>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        
+    
+    </div>
+    
+        
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class='vertical-section'>
+            <h1>Methods</h1>
+            <div class="members">
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="~changeIndexInRangedValues">
+        <a class="href-link" href="#~changeIndexInRangedValues">#</a>
+        
+            
+                <span class='tag'>inner</span>
+            
+        
+        <span class="code-name">
+            
+                changeIndexInRangedValues<span class="signature">(addedPosition)</span><span class="type-signature"> &rarr; {number}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Add a value to the current index respecting the list's range values</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>addedPosition</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type">number</code>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>The value to add to the index</p></td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="index.tsx.html" class="button">View Source</a>
+            <span>
+                <a href="index.tsx.html">index.tsx</a>, <a href="index.tsx.html#line124">line 124</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><ul>
+<li>The new corresponding index</li>
+</ul></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<code class="param-type">number</code>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="~handleBlur">
+        <a class="href-link" href="#~handleBlur">#</a>
+        
+            
+                <span class='tag'>inner</span>
+            
+        
+        <span class="code-name">
+            
+                handleBlur<span class="signature">(e)</span><span class="type-signature"></span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Dropdown blur event (close the dropdown)</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>e</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type">React.KeyboardEvent.&lt;HTMLElement></code>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>e - The event</p></td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="index.tsx.html" class="button">View Source</a>
+            <span>
+                <a href="index.tsx.html">index.tsx</a>, <a href="index.tsx.html#line242">line 242</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="~handleClick">
+        <a class="href-link" href="#~handleClick">#</a>
+        
+            
+                <span class='tag'>inner</span>
+            
+        
+        <span class="code-name">
+            
+                handleClick<span class="signature">(e)</span><span class="type-signature"></span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Dropdown click event (open or close the dropdown)</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>e</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type">React.KeyboardEvent.&lt;HTMLElement></code>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>e - The event</p></td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="index.tsx.html" class="button">View Source</a>
+            <span>
+                <a href="index.tsx.html">index.tsx</a>, <a href="index.tsx.html#line251">line 251</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="~handleKeyDown">
+        <a class="href-link" href="#~handleKeyDown">#</a>
+        
+            
+                <span class='tag'>inner</span>
+            
+        
+        <span class="code-name">
+            
+                handleKeyDown<span class="signature">(e)</span><span class="type-signature"></span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Dropdown key down event</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>e</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type">React.KeyboardEvent.&lt;HTMLElement></code>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>e - The event</p></td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="index.tsx.html" class="button">View Source</a>
+            <span>
+                <a href="index.tsx.html">index.tsx</a>, <a href="index.tsx.html#line183">line 183</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="~initializeIndex">
+        <a class="href-link" href="#~initializeIndex">#</a>
+        
+            
+                <span class='tag'>inner</span>
+            
+        
+        <span class="code-name">
+            
+                initializeIndex<span class="signature">()</span><span class="type-signature"> &rarr; {number}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Initialize selected value's index</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="index.tsx.html" class="button">View Source</a>
+            <span>
+                <a href="index.tsx.html">index.tsx</a>, <a href="index.tsx.html#line73">line 73</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><ul>
+<li>0 or the default value's corresponding index</li>
+</ul></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<code class="param-type">number</code>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="~initializeOverrideValue">
+        <a class="href-link" href="#~initializeOverrideValue">#</a>
+        
+            
+                <span class='tag'>inner</span>
+            
+        
+        <span class="code-name">
+            
+                initializeOverrideValue<span class="signature">()</span><span class="type-signature"> &rarr; {string}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Initialize selected override value</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="index.tsx.html" class="button">View Source</a>
+            <span>
+                <a href="index.tsx.html">index.tsx</a>, <a href="index.tsx.html#line101">line 101</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><ul>
+<li>The override value or the first value</li>
+</ul></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<code class="param-type">string</code>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="~initializeValue">
+        <a class="href-link" href="#~initializeValue">#</a>
+        
+            
+                <span class='tag'>inner</span>
+            
+        
+        <span class="code-name">
+            
+                initializeValue<span class="signature">()</span><span class="type-signature"> &rarr; {string}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Initialize selected value's</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="index.tsx.html" class="button">View Source</a>
+            <span>
+                <a href="index.tsx.html">index.tsx</a>, <a href="index.tsx.html#line89">line 89</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><ul>
+<li>The default value or the first one</li>
+</ul></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<code class="param-type">string</code>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="~isScrollable">
+        <a class="href-link" href="#~isScrollable">#</a>
+        
+            
+                <span class='tag'>inner</span>
+            
+        
+        <span class="code-name">
+            
+                isScrollable<span class="signature">(div)</span><span class="type-signature"> &rarr; {boolean}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Know if the Div element is scrollable</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>div</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type">HTMLDivElement</code>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>The div to test</p></td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="index.tsx.html" class="button">View Source</a>
+            <span>
+                <a href="index.tsx.html">index.tsx</a>, <a href="index.tsx.html#line176">line 176</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><ul>
+<li>Is it scrollable or not</li>
+</ul></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<code class="param-type">boolean</code>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="~scrollToSelectedDiv">
+        <a class="href-link" href="#~scrollToSelectedDiv">#</a>
+        
+            
+                <span class='tag'>inner</span>
+            
+        
+        <span class="code-name">
+            
+                scrollToSelectedDiv<span class="signature">(currentIndex)</span><span class="type-signature"></span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Scroll to the selected div tag in the dropdown list</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>currentIndex</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type">number</code>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>currentIndex - The index of selected value in the dropdown list</p></td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="index.tsx.html" class="button">View Source</a>
+            <span>
+                <a href="index.tsx.html">index.tsx</a>, <a href="index.tsx.html#line154">line 154</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="~setCloseDropdown">
+        <a class="href-link" href="#~setCloseDropdown">#</a>
+        
+            
+                <span class='tag'>inner</span>
+            
+        
+        <span class="code-name">
+            
+                setCloseDropdown<span class="signature">(boolClose)</span><span class="type-signature"></span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Close the dropdown and clear the searching values or open it</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>boolClose</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type">boolean</code>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Close or toggle the dropdown</p></td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="index.tsx.html" class="button">View Source</a>
+            <span>
+                <a href="index.tsx.html">index.tsx</a>, <a href="index.tsx.html#line113">line 113</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="~updateValue">
+        <a class="href-link" href="#~updateValue">#</a>
+        
+            
+                <span class='tag'>inner</span>
+            
+        
+        <span class="code-name">
+            
+                updateValue<span class="signature">(newValue, currentIndex?, keepOpened?)</span><span class="type-signature"></span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Update the selected value of the dropdown and scroll to it if needed (even on click)</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>newValue</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type">object</code>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>newValue - The new selected value of the dropdown</p></td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>currentIndex?</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type">number</code>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>currentIndex - The index of the new value (optional)</p></td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>keepOpened?</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type">boolean</code>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>keepOpened - Do we need to keep the dropdown opened (optional, toggle by default)</p></td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="index.tsx.html" class="button">View Source</a>
+            <span>
+                <a href="index.tsx.html">index.tsx</a>, <a href="index.tsx.html#line141">line 141</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+            
+            </div>
+        </div>
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+            </div>
+            
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.11</a></p>
+                    <p class="sidebar-created-by">
+                        <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by
+                        <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
+                    </p>
+                </div>
+            </footer>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
+<script src="scripts/linenumber.js"> </script>
+
+
+</body>
+</html>

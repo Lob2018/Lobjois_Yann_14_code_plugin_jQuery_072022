@@ -65,3 +65,7 @@ return(
     </>
 )
 ```
+
+## Documentation
+
+[`The complete documentation of react-dropdown-component-library`](https://github.com/Lob2018/Lobjois_Yann_14_code_plugin_jQuery_072022/tree/main/docs/index.html).
