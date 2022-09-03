@@ -1,0 +1,26 @@
+{
+    "tags": {
+        "allowUnknownTags": ["component"],
+        "dictionaries": ["jsdoc", "closure"]
+    },
+    "source": {
+        "include": ["src"],
+        "includePattern": "\\.(jsx|js|ts|tsx)$",
+        "excludePattern": "(^|\\/|\\\\)_",
+        "exclude": ["node_modules"]
+    },
+    "plugins": ["plugins/markdown", "node_modules/better-docs/typescript","node_modules/better-docs/component"],
+    "templates": {
+        "cleverLinks": true,
+        "monospaceLinks": true,
+        "better-docs": {
+            "name": "React Dropdown Component Library"
+        }
+    },
+    "opts": {
+        "template": "node_modules/better-docs",
+        "destination": "docs",
+        "recurse": true,
+        "readme": "README.md"
+    }
+}
