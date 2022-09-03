@@ -1,5 +1,5 @@
 import React from "react";
-import Dropdown from "./Dropdown";
+import Dropdown from "./index";
 import renderer from "react-test-renderer";
 
 describe("Dropdown", () => {

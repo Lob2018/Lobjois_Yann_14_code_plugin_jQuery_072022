@@ -22,5 +22,5 @@
 
     import './styles/iframe.css';
 
-  import Component0 from '../src/lib/components/Dropdown.tsx';
+  import Component0 from '../src/lib/index.tsx';
 reactComponents['Dropdown'] = Component0;

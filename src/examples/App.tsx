@@ -1,4 +1,5 @@
-import { Dropdown } from "../lib";
+import React from "react";
+import  Dropdown  from "../lib";
 
 const App = () => (
   <div style={{ width: "100%", margin: "15px auto" }}>
