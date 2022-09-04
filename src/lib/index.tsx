@@ -169,6 +169,7 @@ const Dropdown = (props:Props) => {
    */
   const scrollToSelectedDiv = (currentIndex: number) => {
     const { current } = divTagContainer;
+    if(current)current.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     const selected = document.querySelector(
       `#${props.labelId + currentIndex}`
     ) as HTMLElement | null;
@@ -179,11 +180,11 @@ const Dropdown = (props:Props) => {
       const { offsetHeight: parentOffsetHeight, scrollTop } = current;
       const isAbove = offsetTop < scrollTop;
       const isBelow = offsetTop + offsetHeight > scrollTop + parentOffsetHeight;
-      if (isAbove) {
+      if (isAbove) {        
         current.scrollTo(0, offsetTop);
       } else if (isBelow) {
         current.scrollTo(0, offsetTop - parentOffsetHeight + offsetHeight);
-      }
+      }      
     }
   };
   /**
@@ -212,24 +213,30 @@ const Dropdown = (props:Props) => {
         setCloseDropdown(true);
       };
       const HOME = () => {
+        e.preventDefault();
         updateValue(props.data[0], 0, true);
       };
-      const END = () => {
+      const END = () => {  
+        e.preventDefault();  
         updateValue(props.data[props.data.length - 1], props.data.length - 1, true);
       };
       const PAGEUP = () => {
+        e.preventDefault();
         const newIndexPageUp = changeIndexInRangedValues(-10);
         updateValue(props.data[newIndexPageUp], newIndexPageUp, true);
       };
-      const PAGEDOWN = () => {
+      const PAGEDOWN = () => {        
+        e.preventDefault();
         const newIndexPageDown = changeIndexInRangedValues(10);
         updateValue(props.data[newIndexPageDown], newIndexPageDown, true);
       };
       const ARROWUP = () => {
+        e.preventDefault();
         const newIndexArrowUp = changeIndexInRangedValues(-1);
         updateValue(props.data[newIndexArrowUp], newIndexArrowUp, true);
       };
       const ARROWDOWN = () => {
+        e.preventDefault();
         const newIndexArrowDown = changeIndexInRangedValues(1);
         updateValue(props.data[newIndexArrowDown], newIndexArrowDown, true);
       };
