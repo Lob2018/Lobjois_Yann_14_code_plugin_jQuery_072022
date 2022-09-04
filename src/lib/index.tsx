@@ -204,6 +204,7 @@ const Dropdown = (props:Props) => {
     if (e) {
       const { key } = e;
       const SPACE = () => {
+        e.preventDefault(); 
         setCloseDropdown(!close);
       };
       const ENTER = () => {

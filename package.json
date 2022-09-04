@@ -1,6 +1,6 @@
 {
   "name": "react-dropdown-component-library",
-  "version": "0.0.0-rc6",
+  "version": "0.0.0-rc7",
   "description": "React dropdown component",
   "main": "dist/index.js",
   "files": [
