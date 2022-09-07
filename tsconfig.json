@@ -8,6 +8,7 @@
     "allowJs": false,
     "jsx": "react-jsx",
     "declaration": true,
+    "declarationDir": "dist",
     "moduleResolution": "node",
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
@@ -19,7 +20,8 @@
     "allowSyntheticDefaultImports": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "strict": true
+    "strict": true,
+    "importHelpers": true
   },
   "files": ["src/lib/index.tsx"],
   "exclude": ["node_modules"]
