@@ -81,8 +81,6 @@ const Dropdown = (props:Props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchString]);
 
-  const divTagContainer = React.useRef<HTMLDivElement>(null);
-
   /**
    * Initialize selected value's index
    * @returns {number} - 0 or the default value's corresponding index
@@ -168,22 +166,25 @@ const Dropdown = (props:Props) => {
    * @param currentIndex {number} currentIndex - The index of selected value in the dropdown list
    */
   const scrollToSelectedDiv = (currentIndex: number) => {
-    const { current } = divTagContainer;
-    if(current)current.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    const divTagContainer = document.querySelector(
+      `#${listboxId}`
+    ) as HTMLDivElement | null; 
+
+    if(divTagContainer)divTagContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     const selected = document.querySelector(
       `#${props.labelId + currentIndex}`
     ) as HTMLElement | null;
 
-    if (current && selected && isScrollable(current)) {
+    if (divTagContainer && selected && isScrollable(divTagContainer)) {
       const offsetHeight = selected.offsetHeight;
       const offsetTop = selected.offsetTop;
-      const { offsetHeight: parentOffsetHeight, scrollTop } = current;
+      const { offsetHeight: parentOffsetHeight, scrollTop } = divTagContainer;
       const isAbove = offsetTop < scrollTop;
       const isBelow = offsetTop + offsetHeight > scrollTop + parentOffsetHeight;
       if (isAbove) {        
-        current.scrollTo(0, offsetTop);
+        divTagContainer.scrollTo(0, offsetTop);
       } else if (isBelow) {
-        current.scrollTo(0, offsetTop - parentOffsetHeight + offsetHeight);
+        divTagContainer.scrollTo(0, offsetTop - parentOffsetHeight + offsetHeight);
       }      
     }
   };
@@ -307,7 +308,6 @@ const Dropdown = (props:Props) => {
         id={listboxId}
         aria-labelledby={props.labelId}
         tabIndex={-1}
-        ref={divTagContainer}
       >
         {props.data.map((d, index) => (
           <div
