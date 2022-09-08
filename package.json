@@ -1,6 +1,6 @@
 {
   "name": "react-dropdown-component-library",
-  "version": "0.1.1-alpha.6",
+  "version": "0.1.1-beta.1",
   "description": "React dropdown component",
   "main": "dist/index.js",
   "files": [
@@ -58,6 +58,12 @@
   "peerDependencies": {
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"
+  },
+  "resolutions": {
+    "mui-datatables/react":"^18.2.0",
+    "mui-datatables/react-dom":"^18.2.0",
+    "@types/mui-datatables/react":"^18.2.0",
+    "@types/mui-datatables/react-dom":"^18.2.0"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^22.0.2",

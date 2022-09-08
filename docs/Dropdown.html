@@ -180,12 +180,13 @@
 
   
 
-  <td class="description last"><pre><b>The props are the dropdown label's unique id, an optional default value, a message when data is empty, and data.</b>
+  <td class="description last"><pre><b>The props are the dropdown label's unique id, an optional default value, a message when data is empty, and data.<br/>The setter function liftingDropDownValueUp to update the parent's state with the selected value</b>
 
 Corresponding to the Props interface {
   labelId: string;
   defaultValue?: Combo; // Optional to select the default value of the dropdown
   data: Combo[];
+  liftingDropDownValueUp: (value: string) => void; // function lifting state up the selected value
 }
 The Combo interface {
   value: string; // The value shown in the dropdown
@@ -203,7 +204,8 @@ The Combo interface {
         { value: "Human Resources" },
         { value: "Legal" },
       ]}
-      messageIfNoData="Pas de données trouvées"
+      messageIfNoData="No data found"
+      liftingDropDownValueUp={handleTextValueChangeDropdown1}
     />
 </b></pre></td>
 </tr>
@@ -253,7 +255,7 @@ The Combo interface {
         <p class="tag-source">
             <a href="index.tsx.html" class="button">View Source</a>
             <span>
-                <a href="index.tsx.html">index.tsx</a>, <a href="index.tsx.html#line35">line 35</a>
+                <a href="index.tsx.html">index.tsx</a>, <a href="index.tsx.html#line37">line 37</a>
             </span>
         </p>
     
@@ -457,7 +459,7 @@ The Combo interface {
         <p class="tag-source">
             <a href="index.tsx.html" class="button">View Source</a>
             <span>
-                <a href="index.tsx.html">index.tsx</a>, <a href="index.tsx.html#line123">line 123</a>
+                <a href="index.tsx.html">index.tsx</a>, <a href="index.tsx.html#line131">line 131</a>
             </span>
         </p>
     
@@ -636,7 +638,7 @@ The Combo interface {
         <p class="tag-source">
             <a href="index.tsx.html" class="button">View Source</a>
             <span>
-                <a href="index.tsx.html">index.tsx</a>, <a href="index.tsx.html#line250">line 250</a>
+                <a href="index.tsx.html">index.tsx</a>, <a href="index.tsx.html#line265">line 265</a>
             </span>
         </p>
     
@@ -788,7 +790,7 @@ The Combo interface {
         <p class="tag-source">
             <a href="index.tsx.html" class="button">View Source</a>
             <span>
-                <a href="index.tsx.html">index.tsx</a>, <a href="index.tsx.html#line259">line 259</a>
+                <a href="index.tsx.html">index.tsx</a>, <a href="index.tsx.html#line274">line 274</a>
             </span>
         </p>
     
@@ -940,7 +942,7 @@ The Combo interface {
         <p class="tag-source">
             <a href="index.tsx.html" class="button">View Source</a>
             <span>
-                <a href="index.tsx.html">index.tsx</a>, <a href="index.tsx.html#line184">line 184</a>
+                <a href="index.tsx.html">index.tsx</a>, <a href="index.tsx.html#line199">line 199</a>
             </span>
         </p>
     
@@ -1041,7 +1043,7 @@ The Combo interface {
         <p class="tag-source">
             <a href="index.tsx.html" class="button">View Source</a>
             <span>
-                <a href="index.tsx.html">index.tsx</a>, <a href="index.tsx.html#line72">line 72</a>
+                <a href="index.tsx.html">index.tsx</a>, <a href="index.tsx.html#line80">line 80</a>
             </span>
         </p>
     
@@ -1169,7 +1171,7 @@ The Combo interface {
         <p class="tag-source">
             <a href="index.tsx.html" class="button">View Source</a>
             <span>
-                <a href="index.tsx.html">index.tsx</a>, <a href="index.tsx.html#line100">line 100</a>
+                <a href="index.tsx.html">index.tsx</a>, <a href="index.tsx.html#line108">line 108</a>
             </span>
         </p>
     
@@ -1297,7 +1299,7 @@ The Combo interface {
         <p class="tag-source">
             <a href="index.tsx.html" class="button">View Source</a>
             <span>
-                <a href="index.tsx.html">index.tsx</a>, <a href="index.tsx.html#line88">line 88</a>
+                <a href="index.tsx.html">index.tsx</a>, <a href="index.tsx.html#line96">line 96</a>
             </span>
         </p>
     
@@ -1476,7 +1478,7 @@ The Combo interface {
         <p class="tag-source">
             <a href="index.tsx.html" class="button">View Source</a>
             <span>
-                <a href="index.tsx.html">index.tsx</a>, <a href="index.tsx.html#line177">line 177</a>
+                <a href="index.tsx.html">index.tsx</a>, <a href="index.tsx.html#line192">line 192</a>
             </span>
         </p>
     
@@ -1655,7 +1657,7 @@ The Combo interface {
         <p class="tag-source">
             <a href="index.tsx.html" class="button">View Source</a>
             <span>
-                <a href="index.tsx.html">index.tsx</a>, <a href="index.tsx.html#line153">line 153</a>
+                <a href="index.tsx.html">index.tsx</a>, <a href="index.tsx.html#line168">line 168</a>
             </span>
         </p>
     
@@ -1807,7 +1809,7 @@ The Combo interface {
         <p class="tag-source">
             <a href="index.tsx.html" class="button">View Source</a>
             <span>
-                <a href="index.tsx.html">index.tsx</a>, <a href="index.tsx.html#line112">line 112</a>
+                <a href="index.tsx.html">index.tsx</a>, <a href="index.tsx.html#line120">line 120</a>
             </span>
         </p>
     
@@ -1857,7 +1859,7 @@ The Combo interface {
     
     
     <div class="description">
-        <p>Update the selected value of the dropdown and scroll to it if needed (even on click)</p>
+        <p>Update the selected value of the dropdown, scroll to it if needed (even on click), and lift state up the selected value</p>
     </div>
     
 
@@ -2009,7 +2011,7 @@ The Combo interface {
         <p class="tag-source">
             <a href="index.tsx.html" class="button">View Source</a>
             <span>
-                <a href="index.tsx.html">index.tsx</a>, <a href="index.tsx.html#line140">line 140</a>
+                <a href="index.tsx.html">index.tsx</a>, <a href="index.tsx.html#line148">line 148</a>
             </span>
         </p>
     

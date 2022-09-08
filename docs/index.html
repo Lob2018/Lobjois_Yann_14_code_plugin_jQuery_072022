@@ -113,50 +113,76 @@
 </code></pre>
 <h2>Usage</h2>
 <p>With value as title attribute and the default css</p>
-<pre class="prettyprint source"><code>import Dropdown from 'react-dropdown-component-library'
-import 'react-dropdown-component-library/dist/style.css' 
+<pre class="prettyprint source lang-typescript"><code>import Dropdown from 'react-dropdown-component-library'
+import 'react-dropdown-component-library/dist/style.css' // the default CSS
 
-...
-return(
-    &lt;>
-        &lt;Dropdown
-        labelId=&quot;combo-label1&quot;
-        defaultValue={{ value: &quot;Marketing&quot; }}
-        data={[
-            { value: &quot;France&quot; },
-            { value: &quot;Marketing&quot; },
-            { value: &quot;Engineering&quot; },
-            { value: &quot;Human Resources&quot; },
-            { value: &quot;Legal&quot; },
-        ]}
-        messageIfNoData=&quot;Pas de données trouvées&quot;
-        />
-    &lt;/>
-)
+const App = () => {
+
+    const [textValueDropdown1, setTextValueDropdown1] = React.useState(&quot;&quot;);
+    const handleTextValueChangeDropdown1 = (value: string) => {
+        setTextValueDropdown1(value ? value : &quot;&quot;);
+    };
+
+    ...
+    // show the selected value in the h1 tag (Marketing)
+    return(
+        &lt;>            
+            &lt;h1>Dropdown value : {textValueDropdown1}&lt;/h1>
+            &lt;label id=&quot;combo-label1&quot;>Dropdown 1 with values&lt;/label>
+            &lt;Dropdown
+            labelId=&quot;combo-label1&quot;
+            defaultValue={{ value: &quot;Marketing&quot; }}
+            data={[
+                { value: &quot;Marketing&quot; },
+                { value: &quot;Engineering&quot; },
+                { value: &quot;Human Resources&quot; },
+                { value: &quot;Legal&quot; },
+            ]}
+            messageIfNoData=&quot;No data found&quot;
+            liftingDropDownValueUp={handleTextValueChangeDropdown1}
+            />
+        &lt;/>
+    )
+};
+export default App;
 </code></pre>
 <p>Or with overrideValue as title attribute, and with your own style based <a href="https://github.com/Lob2018/Lobjois_Yann_14_code_plugin_jQuery_072022/tree/main/src/lib/style.scss"><code>from the original SASS file</code></a>.</p>
-<pre class="prettyprint source"><code>import Dropdown from 'react-dropdown-component-library'
+<pre class="prettyprint source lang-typescript"><code>import Dropdown from 'react-dropdown-component-library'
+import './style.css'; // your own CSS
 
-...
-return(
-    &lt;>
-        &lt;Dropdown
-        labelId=&quot;combo-label1&quot;
-        defaultValue={{ value: &quot;California&quot;, overrideValue: &quot;CA&quot; }}
-        data={[
-        {
-          value: &quot;California&quot;,
-          overrideValue: &quot;CA&quot;,
-        },
-        {
-          value: &quot;Colorado&quot;,
-          overrideValue: &quot;CO&quot;,
-        },
-        ]}
-        messageIfNoData=&quot;Pas de données trouvées&quot;
-        />
-    &lt;/>
-)
+const App = () => {
+
+    const [textValueDropdown2, setTextValueDropdown2] = React.useState(&quot;&quot;);
+    const handleTextValueChangeDropdown2 = (value: string) => {
+        setTextValueDropdown2(value ? value : &quot;&quot;);
+    };
+
+    ...
+    // show the selected overrideValue in the h1 tag (CA)
+    return(
+        &lt;>            
+            &lt;h1>Dropdown value : {textValueDropdown2}&lt;/h1>
+            &lt;label id=&quot;combo-label2&quot;>Dropdown 2 with values&lt;/label>
+            &lt;Dropdown
+            labelId=&quot;combo-label2&quot;
+            defaultValue={{ value: &quot;California&quot;, overrideValue: &quot;CA&quot; }}
+            data={[
+                {
+                    value: &quot;California&quot;,
+                    overrideValue: &quot;CA&quot;,
+                },
+                {
+                    value: &quot;Colorado&quot;,
+                    overrideValue: &quot;CO&quot;,
+                },
+            ]}
+            messageIfNoData=&quot;No data found&quot;
+            liftingDropDownValueUp={handleTextValueChangeDropdown2}
+            />
+        &lt;/>
+    )
+};
+export default App;
 </code></pre>
 <h2>Documentation</h2>
 <p><a href="https://lob2018.github.io/Lobjois_Yann_14_code_plugin_jQuery_072022/"><code>The complete documentation of react-dropdown-component-library</code></a>.</p></article>

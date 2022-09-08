@@ -1,28 +1,28 @@
 import React from "react";
 import "./style.scss";
 
-
 interface Combo {
   value: string;
   overrideValue?: string;
 }
-interface Props {  
+interface Props {
   labelId: string;
   defaultValue?: Combo;
-  messageIfNoData:string;
+  messageIfNoData: string;
   data: Combo[];
+  liftingDropDownValueUp: (value: string) => void;
 }
-
 
 /**
  * Dropdown component
  * @component
- * @param {Props} props <pre><b>The props are the dropdown label's unique id, an optional default value, a message when data is empty, and data.</b> 
+ * @param {Props} props <pre><b>The props are the dropdown label's unique id, an optional default value, a message when data is empty, and data.<br/>The setter function liftingDropDownValueUp to update the parent's state with the selected value</b> 
 
 Corresponding to the Props interface {
   labelId: string;
   defaultValue?: Combo; // Optional to select the default value of the dropdown
   data: Combo[];
+  liftingDropDownValueUp: (value: string) => void; // function lifting state up the selected value
 }
 The Combo interface {
   value: string; // The value shown in the dropdown
@@ -40,12 +40,13 @@ The Combo interface {
         { value: "Human Resources" },
         { value: "Legal" },
       ]}
-      messageIfNoData="Pas de données trouvées"
+      messageIfNoData="No data found"
+      liftingDropDownValueUp={handleTextValueChangeDropdown1}
     />
 </b></pre>
  * @returns {React.ReactElement} The corresponding Dropdown
  */
-const Dropdown = (props:Props) => {
+const Dropdown = (props: Props) => {
   const message = props.messageIfNoData;
   const comboId = "combo-" + props.labelId;
   const listboxId = "listbox-" + props.labelId;
@@ -55,11 +56,18 @@ const Dropdown = (props:Props) => {
   const [index, setIndex] = React.useState(initializeIndex());
   const [value, setValue] = React.useState(initializeValue());
 
-  const [overrideValue, setOverrideValue] = React.useState(
-    initializeOverrideValue()
-  );
+  const defautValueFound = initializeOverrideValue();
+
+  const [overrideValue, setOverrideValue] = React.useState(defautValueFound);
   const [close, setclose] = React.useState(true);
   const [searchString, setSearchString] = React.useState("");
+
+  // Fix cannot update a component while rendering another
+  React.useEffect(() => {
+    props.liftingDropDownValueUp(defautValueFound ? defautValueFound : "");
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   // No side effect when the user is typing a word
   React.useEffect(() => {
     if (searchString) {
@@ -77,7 +85,8 @@ const Dropdown = (props:Props) => {
       return () => {
         clearInterval(interval);
       };
-    }return ()=>{}
+    }
+    return () => {};
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchString]);
 
@@ -143,7 +152,7 @@ const Dropdown = (props:Props) => {
     }
   };
   /**
-   * Update the selected value of the dropdown and scroll to it if needed (even on click)
+   * Update the selected value of the dropdown, scroll to it if needed (even on click), and lift state up the selected value
    * @param newValue {object} newValue - The new selected value of the dropdown
    * @param currentIndex? {number} currentIndex - The index of the new value (optional)
    * @param keepOpened? {boolean} keepOpened - Do we need to keep the dropdown opened (optional, toggle by default)
@@ -160,6 +169,14 @@ const Dropdown = (props:Props) => {
     setValue(newValue.value);
     setOverrideValue(dataIsOverrided ? newValue.overrideValue : newValue.value);
     keepOpened ? setCloseDropdown(false) : setCloseDropdown(true);
+    // lifting state up the selected value with the function
+    if (dataIsOverrided) {
+      props.liftingDropDownValueUp(
+        newValue.overrideValue ? newValue.overrideValue : ""
+      );
+    } else {
+      props.liftingDropDownValueUp(newValue.value ? newValue.value : "");
+    }
   }
   /**
    * Scroll to the selected div tag in the dropdown list
@@ -168,9 +185,10 @@ const Dropdown = (props:Props) => {
   const scrollToSelectedDiv = (currentIndex: number) => {
     const divTagContainer = document.querySelector(
       `#${listboxId}`
-    ) as HTMLDivElement | null; 
+    ) as HTMLDivElement | null;
 
-    if(divTagContainer)divTagContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    if (divTagContainer)
+      divTagContainer.scrollIntoView({ behavior: "smooth", block: "nearest" });
     const selected = document.querySelector(
       `#${props.labelId + currentIndex}`
     ) as HTMLElement | null;
@@ -181,11 +199,14 @@ const Dropdown = (props:Props) => {
       const { offsetHeight: parentOffsetHeight, scrollTop } = divTagContainer;
       const isAbove = offsetTop < scrollTop;
       const isBelow = offsetTop + offsetHeight > scrollTop + parentOffsetHeight;
-      if (isAbove) {        
+      if (isAbove) {
         divTagContainer.scrollTo(0, offsetTop);
       } else if (isBelow) {
-        divTagContainer.scrollTo(0, offsetTop - parentOffsetHeight + offsetHeight);
-      }      
+        divTagContainer.scrollTo(
+          0,
+          offsetTop - parentOffsetHeight + offsetHeight
+        );
+      }
     }
   };
   /**
@@ -205,7 +226,7 @@ const Dropdown = (props:Props) => {
     if (e) {
       const { key } = e;
       const SPACE = () => {
-        e.preventDefault(); 
+        e.preventDefault();
         setCloseDropdown(!close);
       };
       const ENTER = () => {
@@ -218,16 +239,20 @@ const Dropdown = (props:Props) => {
         e.preventDefault();
         updateValue(props.data[0], 0, true);
       };
-      const END = () => {  
-        e.preventDefault();  
-        updateValue(props.data[props.data.length - 1], props.data.length - 1, true);
+      const END = () => {
+        e.preventDefault();
+        updateValue(
+          props.data[props.data.length - 1],
+          props.data.length - 1,
+          true
+        );
       };
       const PAGEUP = () => {
         e.preventDefault();
         const newIndexPageUp = changeIndexInRangedValues(-10);
         updateValue(props.data[newIndexPageUp], newIndexPageUp, true);
       };
-      const PAGEDOWN = () => {        
+      const PAGEDOWN = () => {
         e.preventDefault();
         const newIndexPageDown = changeIndexInRangedValues(10);
         updateValue(props.data[newIndexPageDown], newIndexPageDown, true);
