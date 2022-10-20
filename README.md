@@ -95,3 +95,7 @@ export default App;
 ## Documentation
 
 [`The complete documentation of react-dropdown-component-library`](https://lob2018.github.io/Lobjois_Yann_14_code_plugin_jQuery_072022/).
+
+## CodeSandbox experience
+
+[`Online React Dropdown Component Library code editor and prototyping`](https://codesandbox.io/s/dropdown-pybhpn?file=/src/examples/App.tsx)
