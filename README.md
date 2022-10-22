@@ -2,15 +2,31 @@
 
 A library of React component for projects using [Create React App](https://github.com/facebook/create-react-app).
 
+<br />
+
 # react-dropdown-component-library
 
 Created to replace the JQuery's widget [`selectmenu.js`](https://github.com/jquery/jquery-ui/blob/main/ui/widgets/selectmenu.js).
+
+<br />
+
+## Description
+
+It is a single-select combobox component that is functionally similar to an HTML select element. This select-only drop-down list is not created with an `<input>` element and does not accept free-form user input. Users can navigate using the arrow keys, or type characters, and the corresponding option is automatically selected and displayed in the view.
+
+A tooltip shows the returned value, which can be the selected value or a replacement value (with overrideValue).
+
+>  Implements the [ARIA design pattern for combobox](https://www.w3.org/WAI/ARIA/apg/patterns/combobox/), but option list navigation sets the value of the input.
+
+<br />
 
 ## Installation
 
 ```
 npm install react-dropdown-component-library
 ```
+
+<br />
 
 ## Usage
 
@@ -92,9 +108,13 @@ const App = () => {
 export default App;
 ```
 
+<br />
+
 ## Documentation
 
 [`The complete documentation of react-dropdown-component-library`](https://lob2018.github.io/Lobjois_Yann_14_code_plugin_jQuery_072022/).
+
+<br />
 
 ## CodeSandbox experience
 
